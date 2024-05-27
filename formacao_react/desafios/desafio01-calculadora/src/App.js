@@ -5,7 +5,7 @@ import { Container } from './styles';
 const App = () => {
   return (
     <Container>
-      olá
+      Olá
     </Container>
   );
 }
