@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InputContainer = styled.div`
     width: 100%;
     height: 75px;
-    background-color: #F64147;
+    background-color: #91AFFF;
     
     display: flex;
     align-items: center;
@@ -15,7 +15,7 @@ export const InputContainer = styled.div`
     input {
         width: 100%;
         height: 75px;
-        background-color: #F64147;
+        background-color: #91AFFF;
         border: 0;
         text-align: right;
         padding: 0 10px;

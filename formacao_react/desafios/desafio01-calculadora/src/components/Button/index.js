@@ -1,8 +1,10 @@
-const Button = () => {
+import { ButtonContainer } from "./styles";
+
+const Button = ({label, onClick}) => {
     return (
-      <div className="App">
-        Olá
-      </div>
+      <ButtonContainer onClick={onClick}>
+        {label}
+      </ButtonContainer>
     );
   }
   
