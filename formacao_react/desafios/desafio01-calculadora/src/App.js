@@ -1,11 +1,15 @@
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const App = () => {
   return (
     <Container>
-      Olá
+      <Content>
+       Olá
+      </Content>
     </Container>
   );
 }
 
 export default App;
+
+
