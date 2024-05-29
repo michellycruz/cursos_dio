@@ -23,7 +23,7 @@ const App = () => {
   const handleSumNumbers = () => {
     if (firstNumber === '0'){
       setFirstNumber(String(currentNumber))
-      setCurrentNumber('+')
+      setCurrentNumber('0')
       setOperation('+')
     } else {
       const sum = Number(firstNumber) + Number(currentNumber);
@@ -32,7 +32,18 @@ const App = () => {
     }
   }
 
-  //parei na função de subtração e próximos passos
+  const handleMinusNumbers = () => {
+    if (firstNumber === '0'){
+      setFirstNumber(String(currentNumber))
+      setCurrentNumber('0')
+      setOperation('-')
+    } else {
+      const sum = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+  }
+
 
   const handleEquals = () => {
 
@@ -41,6 +52,9 @@ const App = () => {
         case '+':
           handleSumNumbers();
           break;
+        case '-':
+          handleMinusNumbers();
+          break
           default: 
           break;
       }
@@ -61,7 +75,7 @@ const App = () => {
         <Button label="7" onClick={() => handleAddNumber('7')} />
         <Button label="8" onClick={() => handleAddNumber('8')} />
         <Button label="9" onClick={() => handleAddNumber('9')} />
-        <Button label="-" onClick={() => handleAddNumber('')} />
+        <Button label="-" onClick={handleMinusNumbers} />
        </Row>
        <Row>
         <Button label="4" onClick={() => handleAddNumber('4')} />
