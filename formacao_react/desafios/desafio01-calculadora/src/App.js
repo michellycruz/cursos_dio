@@ -86,7 +86,6 @@ const App = () => {
           hadleDivNumbers();
           break
           default: 
-          break;
       }
     }
   }
