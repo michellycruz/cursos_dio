@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 const App = () => {
-  const [currentNumber, setCurrentNumber] = useState(0)
+  const [currentNumber, setCurrentNumber] = useState('0')
   const [firstNumber, setFirstNumber] = useState('0')
   const [operation, setOperation] = useState('')
 
@@ -16,31 +16,33 @@ const App = () => {
     setOperation('')
   }
 
-  const handleAddNumber = (num) => {
-    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+  const handleAddNumber = (number) => {
+    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${number}`)
   }
 
   const handleSumNumbers = () => {
     if (firstNumber === '0'){
       setFirstNumber(String(currentNumber))
-      setCurrentNumber('0')
+      setCurrentNumber('+')
       setOperation('+')
     } else {
-
       const sum = Number(firstNumber) + Number(currentNumber);
       setCurrentNumber(String(sum))
       setOperation('')
     }
   }
 
+  //parei na função de subtração e próximos passos
+
   const handleEquals = () => {
-    if (!firstNumber === '0' && operation !== '' && currentNumber !== '0'){
+
+    if (firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
       switch(operation){
         case '+':
           handleSumNumbers();
           break;
           default: 
-          break
+          break;
       }
     }
   }
